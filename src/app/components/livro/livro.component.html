@@ -1,0 +1,78 @@
+<section>
+  <app-nav-bar></app-nav-bar>
+  <div class="content">
+    <form [formGroup]="livroForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12">
+          <label for="titulo" class="form-label">Titulo</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="titulo"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="editora" class="form-label">Editora</label>
+          <input type="text" class="form-control" formControlName="editora" />
+        </div>
+        <div class="col-12">
+          <label for="numero" class="form-label">Edicao</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="edicao"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="anoPublicacao">Ano Publicação</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="anoPublicacao"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="preco">Preço</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="preco"
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+            currencyMask
+            (focus)="resetField()"
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="autor" class="form-label">Autor</label>
+          <select class="form-select" formControlName="autor">
+            <!-- (change)="clearRadiusLineTable()" -->
+            <option *ngFor="let item of autores" [value]="item.id">
+              {{ item.nome }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <label for="assunto" class="form-label">Assunto</label>
+          <select class="form-select" formControlName="assunto">
+            <!-- (change)="clearRadiusLineTable()" -->
+            <option *ngFor="let item of assuntos" [value]="item.id">
+              {{ item.descricao }}
+            </option>
+          </select>
+        </div>
+        <div class="btns">
+          <button class="btn btn-light" [disabled]="livroForm.invalid">
+            Cadastrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

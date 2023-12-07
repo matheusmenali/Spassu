@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: @fonte-cor-primaria;
+  font-family: Poppins, sans-serif;
+}
+
+.main-content {
+  height: 100vh;
+}
+
+section {
+  background-color: @cor-primaria;
+  display: block;
+  height: 100%;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+  }
+  form {
+    width: 50%;
+
+    .form-label {
+      margin: 15px 0 0px 0 !important;
+    }
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+  .btn {
+    color: @cor-primaria!important;
+  }
+}
+
+@cor-primaria: #f94615;
+@cor-secundaria: #fff;
+@fonte-cor-primaria: #fff;

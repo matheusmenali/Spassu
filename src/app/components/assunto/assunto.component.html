@@ -1,0 +1,24 @@
+<section>
+  <app-nav-bar></app-nav-bar>
+
+  <div class="content">
+    <form [formGroup]="assuntoForm">
+      <div class="row">
+        <div class="col-12">
+          <label for="descricao" class="form-label">Descrição</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="descricao"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn btn-light">Cadastrar</button>
+      </div>
+    </form>
+  </div>
+</section>
